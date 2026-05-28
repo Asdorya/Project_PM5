@@ -15,7 +15,7 @@ namespace Equipment_rental
             Application.SetCompatibleTextRenderingDefault(false);
 
             //Application.Run(new RegistreForm());
-            Application.Run(new LoginForm());
+            Application.Run(new MainForm());
         }
     }
 }

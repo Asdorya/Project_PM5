@@ -93,6 +93,16 @@ namespace Equipment_rental.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap delivery_truck_4111303 {
+            get {
+                object obj = ResourceManager.GetObject("delivery-truck_4111303", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap eye_3917052 {
             get {
                 object obj = ResourceManager.GetObject("eye_3917052", resourceCulture);
@@ -103,9 +113,29 @@ namespace Equipment_rental.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap headphone_18080416 {
+            get {
+                object obj = ResourceManager.GetObject("headphone_18080416", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap lock_3917591 {
             get {
                 object obj = ResourceManager.GetObject("lock_3917591", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap mark_10093833 {
+            get {
+                object obj = ResourceManager.GetObject("mark_10093833", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

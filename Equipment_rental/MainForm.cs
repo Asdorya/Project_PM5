@@ -23,20 +23,12 @@ namespace Equipment_rental
             loginForm.Show();
         }
 
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-
-        }
-
+       
         private void button1_Click(object sender, EventArgs e)
         {
             LoginForm loginForm = new LoginForm();
             loginForm.Show();
         }
 
-        private void pictureBox3_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

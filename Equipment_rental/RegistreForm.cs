@@ -9,6 +9,7 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static Equipment_rental.LoginForm;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
 
 namespace Equipment_rental
@@ -207,7 +208,10 @@ namespace Equipment_rental
             db.openConnection();
 
             if (command.ExecuteNonQuery() == 1)
-            { MessageBox.Show("Аккаунт успешно создан"); }
+            {
+                // хеширование пароля
+                string passwordToSave = PasswordHasher.HashPassword(passField.Text);
+                MessageBox.Show("Аккаунт успешно создан"); }
 
             else { MessageBox.Show("Ошибка при создании аккаунта, повторите попытку"); }
 
