@@ -32,16 +32,23 @@
             CloseButton = new Label();
             label1 = new Label();
             panel2 = new Panel();
+            RegistrLabel = new Label();
+            passField2 = new TextBox();
+            passField = new TextBox();
+            eyeBox2 = new PictureBox();
+            pictureBox4 = new PictureBox();
+            pictureBox3 = new PictureBox();
             userNameField = new TextBox();
-            userSurnameField = new TextBox();
             eyeBox = new PictureBox();
             buttonRegister = new Button();
-            passField = new TextBox();
             pictureBox2 = new PictureBox();
             loginField = new TextBox();
             pictureBox1 = new PictureBox();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)eyeBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)eyeBox).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -88,47 +95,112 @@
             // panel2
             // 
             panel2.BackColor = Color.PeachPuff;
+            panel2.Controls.Add(RegistrLabel);
+            panel2.Controls.Add(passField2);
+            panel2.Controls.Add(passField);
+            panel2.Controls.Add(eyeBox2);
+            panel2.Controls.Add(pictureBox4);
+            panel2.Controls.Add(pictureBox3);
             panel2.Controls.Add(userNameField);
-            panel2.Controls.Add(userSurnameField);
             panel2.Controls.Add(eyeBox);
             panel2.Controls.Add(buttonRegister);
-            panel2.Controls.Add(passField);
             panel2.Controls.Add(pictureBox2);
             panel2.Controls.Add(loginField);
             panel2.Controls.Add(pictureBox1);
             panel2.Dock = DockStyle.Fill;
             panel2.Location = new Point(0, 0);
             panel2.Name = "panel2";
-            panel2.Size = new Size(434, 450);
+            panel2.Size = new Size(434, 471);
             panel2.TabIndex = 3;
+            // 
+            // RegistrLabel
+            // 
+            RegistrLabel.AutoSize = true;
+            RegistrLabel.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            RegistrLabel.ForeColor = Color.DarkGray;
+            RegistrLabel.Location = new Point(149, 441);
+            RegistrLabel.Name = "RegistrLabel";
+            RegistrLabel.Size = new Size(116, 21);
+            RegistrLabel.TabIndex = 13;
+            RegistrLabel.Text = "Есть аккаунт?";
+            RegistrLabel.TextAlign = ContentAlignment.BottomCenter;
+            RegistrLabel.Click += RegistrLabel_Click;
+            RegistrLabel.MouseEnter += RegistrLabel_Enter;
+            RegistrLabel.MouseLeave += RegistrLabel_Leave;
+            // 
+            // passField2
+            // 
+            passField2.Font = new Font("Calibri", 21.75F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            passField2.Location = new Point(78, 316);
+            passField2.Name = "passField2";
+            passField2.Size = new Size(295, 43);
+            passField2.TabIndex = 12;
+            passField2.UseSystemPasswordChar = true;
+            passField2.Enter += passField2_Enter;
+            passField2.Leave += passField2_Leave;
+            // 
+            // passField
+            // 
+            passField.Font = new Font("Calibri", 21.75F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            passField.Location = new Point(78, 247);
+            passField.Name = "passField";
+            passField.Size = new Size(295, 43);
+            passField.TabIndex = 11;
+            passField.UseSystemPasswordChar = true;
+            passField.Enter += passField_Enter;
+            passField.Leave += passField_Leave;
+            // 
+            // eyeBox2
+            // 
+            eyeBox2.BackColor = Color.Transparent;
+            eyeBox2.Image = Properties.Resources.eye_3917052;
+            eyeBox2.Location = new Point(379, 326);
+            eyeBox2.Name = "eyeBox2";
+            eyeBox2.Size = new Size(33, 26);
+            eyeBox2.SizeMode = PictureBoxSizeMode.StretchImage;
+            eyeBox2.TabIndex = 10;
+            eyeBox2.TabStop = false;
+            eyeBox2.MouseLeave += eyeBox2_MouseLeave;
+            eyeBox2.MouseMove += eyeBox2_MouseMove;
+            // 
+            // pictureBox4
+            // 
+            pictureBox4.BackColor = Color.Transparent;
+            pictureBox4.Image = Properties.Resources.circle_user_9821479;
+            pictureBox4.Location = new Point(20, 105);
+            pictureBox4.Name = "pictureBox4";
+            pictureBox4.Size = new Size(47, 44);
+            pictureBox4.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox4.TabIndex = 9;
+            pictureBox4.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            pictureBox3.BackColor = Color.Transparent;
+            pictureBox3.Image = Properties.Resources.lock_3917591;
+            pictureBox3.Location = new Point(20, 316);
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.Size = new Size(47, 47);
+            pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox3.TabIndex = 8;
+            pictureBox3.TabStop = false;
             // 
             // userNameField
             // 
-            userNameField.Font = new Font("Calibri", 24F);
-            userNameField.Location = new Point(88, 105);
+            userNameField.Font = new Font("Calibri", 21.75F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            userNameField.Location = new Point(78, 105);
             userNameField.Multiline = true;
             userNameField.Name = "userNameField";
-            userNameField.Size = new Size(275, 44);
+            userNameField.Size = new Size(295, 44);
             userNameField.TabIndex = 7;
             userNameField.Enter += userNameField_Enter;
             userNameField.Leave += userNameField_Leave;
-            // 
-            // userSurnameField
-            // 
-            userSurnameField.Font = new Font("Calibri", 24F);
-            userSurnameField.Location = new Point(88, 177);
-            userSurnameField.Multiline = true;
-            userSurnameField.Name = "userSurnameField";
-            userSurnameField.Size = new Size(275, 44);
-            userSurnameField.TabIndex = 6;
-            userSurnameField.Enter += userSurnameField_Enter;
-            userSurnameField.Leave += userSurnameField_Leave;
             // 
             // eyeBox
             // 
             eyeBox.BackColor = Color.Transparent;
             eyeBox.Image = Properties.Resources.eye_3917052;
-            eyeBox.Location = new Point(376, 326);
+            eyeBox.Location = new Point(379, 256);
             eyeBox.Name = "eyeBox";
             eyeBox.Size = new Size(33, 26);
             eyeBox.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -143,30 +215,19 @@
             buttonRegister.FlatStyle = FlatStyle.Flat;
             buttonRegister.Font = new Font("Calibri", 18F, FontStyle.Regular, GraphicsUnit.Point, 204);
             buttonRegister.ForeColor = Color.White;
-            buttonRegister.Location = new Point(114, 387);
+            buttonRegister.Location = new Point(92, 394);
             buttonRegister.Name = "buttonRegister";
-            buttonRegister.Size = new Size(230, 44);
+            buttonRegister.Size = new Size(249, 44);
             buttonRegister.TabIndex = 4;
-            buttonRegister.Text = "Войти";
+            buttonRegister.Text = "Зарегистрироваться";
             buttonRegister.UseVisualStyleBackColor = false;
-            // 
-            // passField
-            // 
-            passField.BackColor = Color.White;
-            passField.Font = new Font("Calibri", 24F);
-            passField.Location = new Point(88, 316);
-            passField.Name = "passField";
-            passField.Size = new Size(275, 47);
-            passField.TabIndex = 3;
-            passField.UseSystemPasswordChar = true;
-            passField.Enter += passField_Enter;
-            passField.Leave += passField_Leave;
+            buttonRegister.Click += buttonRegister_Click;
             // 
             // pictureBox2
             // 
             pictureBox2.BackColor = Color.Transparent;
             pictureBox2.Image = Properties.Resources.password_14562503;
-            pictureBox2.Location = new Point(20, 316);
+            pictureBox2.Location = new Point(20, 247);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(47, 47);
             pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -175,11 +236,11 @@
             // 
             // loginField
             // 
-            loginField.Font = new Font("Calibri", 24F);
-            loginField.Location = new Point(88, 247);
+            loginField.Font = new Font("Calibri", 21.75F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            loginField.Location = new Point(78, 177);
             loginField.Multiline = true;
             loginField.Name = "loginField";
-            loginField.Size = new Size(275, 44);
+            loginField.Size = new Size(295, 44);
             loginField.TabIndex = 1;
             loginField.Enter += loginField_Enter;
             loginField.Leave += loginField_Leave;
@@ -188,7 +249,7 @@
             // 
             pictureBox1.BackColor = Color.Transparent;
             pictureBox1.Image = Properties.Resources.user_456283;
-            pictureBox1.Location = new Point(20, 247);
+            pictureBox1.Location = new Point(20, 177);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(47, 44);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -199,7 +260,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(434, 450);
+            ClientSize = new Size(434, 471);
             Controls.Add(panel1);
             Controls.Add(panel2);
             Name = "RegistreForm";
@@ -208,6 +269,9 @@
             panel1.PerformLayout();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)eyeBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)eyeBox).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
@@ -220,12 +284,16 @@
         private Panel panel2;
         private PictureBox eyeBox;
         private Button buttonRegister;
-        private TextBox passField;
         private PictureBox pictureBox2;
         private TextBox loginField;
         private PictureBox pictureBox1;
         private Label label1;
         private TextBox userNameField;
-        private TextBox userSurnameField;
+        private PictureBox pictureBox3;
+        private PictureBox eyeBox2;
+        private PictureBox pictureBox4;
+        private TextBox passField;
+        private TextBox passField2;
+        private Label RegistrLabel;
     }
 }

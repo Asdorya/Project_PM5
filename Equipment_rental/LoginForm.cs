@@ -27,6 +27,8 @@ namespace Equipment_rental
             {
                 passField.UseSystemPasswordChar = false;
             }
+            capcha.Text = "Введите капчу";
+            capcha.ForeColor = Color.Gray;
 
         }
 
@@ -82,12 +84,28 @@ namespace Equipment_rental
                 passField.ForeColor = Color.Gray;
             }
         }
+        private void capcha_Enter(object sender, EventArgs e)
+        {
+            if (capcha.Text == "Введите капчу")
+            {
+                capcha.Text = "";
+                capcha.ForeColor = Color.Black;
+            }
+        }
 
+        private void capcha_Leave(object sender, EventArgs e)
+        {
+            if (capcha.Text == "")
+            {
+                capcha.Text = "Введите капчу";
+                capcha.ForeColor = Color.Gray;
+            }
+        }
 
 
         private void label2_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
         }
 
         private void label2_MouseEnter(object sender, EventArgs e)
@@ -97,27 +115,40 @@ namespace Equipment_rental
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string LoginUser = loginField.Text;
-            string PassUser = passField.Text;
+            if (capcha.Text == "V4XBG")
+            {
+                DB db = new DB();
 
-            DB db = new DB();
+                DataTable table = new DataTable();
 
-            DataTable table = new DataTable();
+                MySqlDataAdapter adapter = new MySqlDataAdapter();
 
-            MySqlDataAdapter adapter = new MySqlDataAdapter();
+                MySqlCommand command = new MySqlCommand("SELECT * FROM `users` WHERE `login` = @uL AND `password` = @uP", db.getConnection());
+                command.Parameters.Add("@uL", MySqlDbType.VarChar).Value = loginField.Text;
+                command.Parameters.Add("@uP", MySqlDbType.VarChar).Value = passField.Text;
 
-            MySqlCommand command = new MySqlCommand("SELECT * FROM `users` WHERE `login` = @uL AND `password` = @uP", db.getConnection());
-            command.Parameters.Add("@uL", MySqlDbType.VarChar).Value = loginField;
-            command.Parameters.Add("@uP", MySqlDbType.VarChar).Value = passField;
+                adapter.SelectCommand = command;
+                adapter.Fill(table);
 
-            adapter.SelectCommand = command;
-            adapter.Fill(table);
 
-            if (table.Rows.Count > 0)
-                MessageBox.Show("Yes");
+
+                if (table.Rows.Count > 0)
+                {
+                    this.Hide();
+                    MainForm mainForm = new MainForm();
+                    mainForm.Show();
+                }
+                else
+                    MessageBox.Show("Произошла ошибка");
+            }
+
             else
-                MessageBox.Show("No");
+            {
+                MessageBox.Show("Неверная капча, повторите попытку");
+                capcha.Text = "";
+            }
         }
+            
 
         private void label2_MouseLeave(object sender, EventArgs e)
         {
@@ -136,6 +167,34 @@ namespace Equipment_rental
         }
 
         private void passField_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            RegistreForm registerForm = new RegistreForm();
+            registerForm.Show();
+        }
+
+
+        private void RegistrLabel_Enter(object sender, EventArgs e)
+        {
+            RegistrLabel.ForeColor = Color.Gray;
+        }
+
+        private void RegistrLabel_Leave(object sender, EventArgs e)
+        {
+            RegistrLabel.ForeColor = Color.DarkGray;
+        }
+
+        private void passField_TextChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
         }

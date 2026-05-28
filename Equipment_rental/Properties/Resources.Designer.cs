@@ -63,9 +63,59 @@ namespace Equipment_rental.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap capche {
+            get {
+                object obj = ResourceManager.GetObject("capche", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap circle_user_9821479 {
+            get {
+                object obj = ResourceManager.GetObject("circle-user_9821479", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap circle_user_9821492 {
+            get {
+                object obj = ResourceManager.GetObject("circle-user_9821492", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap eye_3917052 {
             get {
                 object obj = ResourceManager.GetObject("eye_3917052", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap lock_3917591 {
+            get {
+                object obj = ResourceManager.GetObject("lock_3917591", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap nnl68blcscc_jpg {
+            get {
+                object obj = ResourceManager.GetObject("nnl68blcscc.jpg", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -86,6 +136,26 @@ namespace Equipment_rental.Properties {
         internal static System.Drawing.Bitmap password_14562503 {
             get {
                 object obj = ResourceManager.GetObject("password_14562503", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap refresh_875100 {
+            get {
+                object obj = ResourceManager.GetObject("refresh_875100", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap toolbox_18936236 {
+            get {
+                object obj = ResourceManager.GetObject("toolbox_18936236", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

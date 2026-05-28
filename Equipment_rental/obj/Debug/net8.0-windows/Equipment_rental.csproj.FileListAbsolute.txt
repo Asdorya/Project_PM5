@@ -20,3 +20,4 @@ C:\Users\TREIDCOMPUTERS\source\repos\Equipment_rental\Equipment_rental\bin\Debug
 C:\Users\TREIDCOMPUTERS\source\repos\Equipment_rental\Equipment_rental\obj\Debug\net8.0-windows\Equipment_rental.csproj.AssemblyReference.cache
 C:\Users\TREIDCOMPUTERS\source\repos\Equipment_rental\Equipment_rental\obj\Debug\net8.0-windows\Equipmen.1572D3CD.Up2Date
 C:\Users\TREIDCOMPUTERS\source\repos\Equipment_rental\Equipment_rental\obj\Debug\net8.0-windows\Equipment_rental.RegistreForm.resources
+C:\Users\TREIDCOMPUTERS\source\repos\Equipment_rental\Equipment_rental\obj\Debug\net8.0-windows\Equipment_rental.MainForm.resources
