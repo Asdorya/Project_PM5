@@ -24,7 +24,7 @@ namespace Equipment_rental
             loginForm.Show();
         }
 
-       
+
         private void button1_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -32,5 +32,9 @@ namespace Equipment_rental
             loginForm.Show();
         }
 
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

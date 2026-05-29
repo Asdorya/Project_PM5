@@ -58,3 +58,14 @@ C:\Users\TREIDCOMPUTERS\Desktop\ПМ5\Project\Project_PM5\Equipment_rental\obj\D
 C:\Users\TREIDCOMPUTERS\Desktop\ПМ5\Project\Project_PM5\Equipment_rental\obj\Debug\net8.0-windows\Equipment_rental.dll
 C:\Users\TREIDCOMPUTERS\Desktop\ПМ5\Project\Project_PM5\Equipment_rental\obj\Debug\net8.0-windows\refint\Equipment_rental.dll
 C:\Users\TREIDCOMPUTERS\Desktop\ПМ5\Project\Project_PM5\Equipment_rental\obj\Debug\net8.0-windows\Equipment_rental.pdb
+C:\Users\TREIDCOMPUTERS\Desktop\ПМ5\Project\Project_PM5\Equipment_rental\bin\Debug\net8.0-windows\Equipment_rental.exe
+C:\Users\TREIDCOMPUTERS\Desktop\ПМ5\Project\Project_PM5\Equipment_rental\bin\Debug\net8.0-windows\Equipment_rental.deps.json
+C:\Users\TREIDCOMPUTERS\Desktop\ПМ5\Project\Project_PM5\Equipment_rental\bin\Debug\net8.0-windows\Equipment_rental.runtimeconfig.json
+C:\Users\TREIDCOMPUTERS\Desktop\ПМ5\Project\Project_PM5\Equipment_rental\bin\Debug\net8.0-windows\Equipment_rental.dll
+C:\Users\TREIDCOMPUTERS\Desktop\ПМ5\Project\Project_PM5\Equipment_rental\bin\Debug\net8.0-windows\Equipment_rental.pdb
+C:\Users\TREIDCOMPUTERS\Desktop\ПМ5\Project\Project_PM5\Equipment_rental\bin\Debug\net8.0-windows\MySql.Data.dll
+C:\Users\TREIDCOMPUTERS\Desktop\ПМ5\Project\Project_PM5\Equipment_rental\bin\Debug\net8.0-windows\MySql.Data.xml
+C:\Users\TREIDCOMPUTERS\Desktop\ПМ5\Project\Project_PM5\Equipment_rental\obj\Debug\net8.0-windows\Equipment_rental.csproj.AssemblyReference.cache
+C:\Users\TREIDCOMPUTERS\Desktop\ПМ5\Project\Project_PM5\Equipment_rental\obj\Debug\net8.0-windows\Equipmen.1572D3CD.Up2Date
+C:\Users\TREIDCOMPUTERS\Desktop\ПМ5\Project\Project_PM5\Equipment_rental\obj\Debug\net8.0-windows\Equipment_rental.genruntimeconfig.cache
+C:\Users\TREIDCOMPUTERS\Desktop\ПМ5\Project\Project_PM5\Equipment_rental\obj\Debug\net8.0-windows\ref\Equipment_rental.dll
