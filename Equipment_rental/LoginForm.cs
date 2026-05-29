@@ -1,6 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
 using System.Data;
+using System.Linq;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -174,10 +175,19 @@ namespace Equipment_rental
                     loginField.Text,
                     UserRoleHelper.FromDbValue(roleValue));
 
-                this.Hide();
-                EquipmentForm equipmentForm = new EquipmentForm();
-                equipmentForm.FormClosed += (_, _) => Close();
-                equipmentForm.Show();
+                MainForm? mainForm = Application.OpenForms.OfType<MainForm>().FirstOrDefault();
+                if (mainForm == null)
+                {
+                    mainForm = new MainForm();
+                    mainForm.Show();
+                }
+                else
+                {
+                    mainForm.Show();
+                    mainForm.RefreshUserState();
+                }
+
+                Close();
             }
             else
             {

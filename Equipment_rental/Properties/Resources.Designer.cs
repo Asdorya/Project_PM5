@@ -209,5 +209,25 @@ namespace Equipment_rental.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap vecteezy_computer_icons_with_white_background_8958610_nobg {
+            get {
+                object obj = ResourceManager.GetObject("vecteezy_computer-icons-with-white-background_8958610-nobg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap vecteezy_set_of_vector_icons_related_to_data_analysis_contains_such_7894291 {
+            get {
+                object obj = ResourceManager.GetObject("vecteezy_set-of-vector-icons-related-to-data-analysis-contains-such_7894291", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

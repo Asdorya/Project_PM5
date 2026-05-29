@@ -1,5 +1,6 @@
 using MySql.Data.MySqlClient;
 using System.Data;
+using System.Linq;
 
 namespace Equipment_rental
 {
@@ -319,6 +320,16 @@ namespace Equipment_rental
         private void btnLogout_Click(object sender, EventArgs e)
         {
             UserSession.Logout();
+
+            MainForm? mainForm = Application.OpenForms.OfType<MainForm>().FirstOrDefault();
+            if (mainForm != null)
+            {
+                mainForm.Show();
+                mainForm.RefreshUserState();
+                Close();
+                return;
+            }
+
             OpenLoginForm();
         }
 

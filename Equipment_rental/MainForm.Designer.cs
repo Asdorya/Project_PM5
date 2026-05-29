@@ -30,6 +30,8 @@
         {
             button1 = new Button();
             panel1 = new Panel();
+            labelUserRole = new Label();
+            labelUserLogin = new Label();
             label6 = new Label();
             label5 = new Label();
             label4 = new Label();
@@ -37,11 +39,20 @@
             label2 = new Label();
             label1 = new Label();
             panel2 = new Panel();
+            panelRentalActions = new Panel();
+            btnManageEquipment = new Button();
+            btnRentEquipment = new Button();
+            btnViewCatalog = new Button();
+            labelRentalDescription = new Label();
+            labelWelcomeRent = new Label();
+            panelGuestActions = new Panel();
             label13 = new Label();
             label9 = new Label();
             label8 = new Label();
             label7 = new Label();
             label3 = new Label();
+            pictureBox5 = new PictureBox();
+            pictureBox6 = new PictureBox();
             panel3 = new Panel();
             pictureBox4 = new PictureBox();
             pictureBox2 = new PictureBox();
@@ -52,6 +63,10 @@
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             panel2.SuspendLayout();
+            panelRentalActions.SuspendLayout();
+            panelGuestActions.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -75,6 +90,8 @@
             // panel1
             // 
             panel1.BackColor = Color.Black;
+            panel1.Controls.Add(labelUserRole);
+            panel1.Controls.Add(labelUserLogin);
             panel1.Controls.Add(label6);
             panel1.Controls.Add(label5);
             panel1.Controls.Add(label4);
@@ -87,13 +104,45 @@
             panel1.Size = new Size(1025, 72);
             panel1.TabIndex = 2;
             // 
+            // labelUserRole
+            // 
+            labelUserRole.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            labelUserRole.BackColor = Color.DarkGoldenrod;
+            labelUserRole.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            labelUserRole.ForeColor = Color.White;
+            labelUserRole.Location = new Point(870, 38);
+            labelUserRole.Name = "labelUserRole";
+            labelUserRole.Size = new Size(140, 20);
+            labelUserRole.TabIndex = 14;
+            labelUserRole.Text = "user";
+            labelUserRole.TextAlign = ContentAlignment.TopRight;
+            labelUserRole.Visible = false;
+            // 
+            // labelUserLogin
+            // 
+            labelUserLogin.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            labelUserLogin.BackColor = Color.DarkGoldenrod;
+            labelUserLogin.BorderStyle = BorderStyle.FixedSingle;
+            labelUserLogin.Cursor = Cursors.Hand;
+            labelUserLogin.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            labelUserLogin.ForeColor = Color.White;
+            labelUserLogin.Location = new Point(823, 9);
+            labelUserLogin.Name = "labelUserLogin";
+            labelUserLogin.Padding = new Padding(4, 2, 4, 2);
+            labelUserLogin.Size = new Size(190, 26);
+            labelUserLogin.TabIndex = 13;
+            labelUserLogin.Text = "login";
+            labelUserLogin.TextAlign = ContentAlignment.MiddleRight;
+            labelUserLogin.Visible = false;
+            labelUserLogin.Click += labelUserLogin_Click;
+            // 
             // label6
             // 
             label6.AutoSize = true;
             label6.BackColor = Color.DarkGoldenrod;
             label6.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 204);
             label6.ForeColor = Color.White;
-            label6.Location = new Point(576, 12);
+            label6.Location = new Point(107, 15);
             label6.Name = "label6";
             label6.Size = new Size(73, 21);
             label6.TabIndex = 12;
@@ -105,7 +154,7 @@
             label5.BackColor = Color.DarkGoldenrod;
             label5.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 204);
             label5.ForeColor = Color.White;
-            label5.Location = new Point(675, 12);
+            label5.Location = new Point(195, 15);
             label5.Name = "label5";
             label5.Size = new Size(127, 21);
             label5.TabIndex = 11;
@@ -118,7 +167,7 @@
             label4.BackColor = Color.DarkGoldenrod;
             label4.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 204);
             label4.ForeColor = Color.White;
-            label4.Location = new Point(827, 12);
+            label4.Location = new Point(340, 15);
             label4.Name = "label4";
             label4.Size = new Size(40, 21);
             label4.TabIndex = 10;
@@ -166,17 +215,109 @@
             // panel2
             // 
             panel2.BackColor = Color.PeachPuff;
-            panel2.Controls.Add(label13);
-            panel2.Controls.Add(label9);
-            panel2.Controls.Add(label8);
-            panel2.Controls.Add(label7);
-            panel2.Controls.Add(label3);
-            panel2.Controls.Add(button1);
+            panel2.Controls.Add(pictureBox5);
+            panel2.Controls.Add(pictureBox6);
+            panel2.Controls.Add(panelGuestActions);
+            panel2.Controls.Add(panelRentalActions);
             panel2.Dock = DockStyle.Fill;
             panel2.Location = new Point(0, 0);
             panel2.Name = "panel2";
             panel2.Size = new Size(1025, 577);
             panel2.TabIndex = 3;
+            // 
+            // panelRentalActions
+            // 
+            panelRentalActions.BackColor = Color.Transparent;
+            panelRentalActions.Controls.Add(btnManageEquipment);
+            panelRentalActions.Controls.Add(btnRentEquipment);
+            panelRentalActions.Controls.Add(btnViewCatalog);
+            panelRentalActions.Controls.Add(labelRentalDescription);
+            panelRentalActions.Controls.Add(labelWelcomeRent);
+            panelRentalActions.Location = new Point(140, 300);
+            panelRentalActions.Name = "panelRentalActions";
+            panelRentalActions.Size = new Size(750, 200);
+            panelRentalActions.TabIndex = 16;
+            panelRentalActions.Visible = false;
+            // 
+            // btnManageEquipment
+            // 
+            btnManageEquipment.BackColor = Color.Black;
+            btnManageEquipment.FlatStyle = FlatStyle.Flat;
+            btnManageEquipment.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            btnManageEquipment.ForeColor = Color.White;
+            btnManageEquipment.Location = new Point(510, 120);
+            btnManageEquipment.Name = "btnManageEquipment";
+            btnManageEquipment.Size = new Size(220, 48);
+            btnManageEquipment.TabIndex = 4;
+            btnManageEquipment.Text = "Управление";
+            btnManageEquipment.UseVisualStyleBackColor = false;
+            btnManageEquipment.Visible = false;
+            btnManageEquipment.Click += btnManageEquipment_Click;
+            // 
+            // btnRentEquipment
+            // 
+            btnRentEquipment.BackColor = Color.SaddleBrown;
+            btnRentEquipment.FlatStyle = FlatStyle.Flat;
+            btnRentEquipment.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            btnRentEquipment.ForeColor = Color.White;
+            btnRentEquipment.Location = new Point(265, 120);
+            btnRentEquipment.Name = "btnRentEquipment";
+            btnRentEquipment.Size = new Size(220, 48);
+            btnRentEquipment.TabIndex = 3;
+            btnRentEquipment.Text = "Заказать в аренду";
+            btnRentEquipment.UseVisualStyleBackColor = false;
+            btnRentEquipment.Click += btnRentEquipment_Click;
+            // 
+            // btnViewCatalog
+            // 
+            btnViewCatalog.BackColor = Color.DarkGoldenrod;
+            btnViewCatalog.FlatStyle = FlatStyle.Flat;
+            btnViewCatalog.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            btnViewCatalog.ForeColor = Color.White;
+            btnViewCatalog.Location = new Point(20, 120);
+            btnViewCatalog.Name = "btnViewCatalog";
+            btnViewCatalog.Size = new Size(220, 48);
+            btnViewCatalog.TabIndex = 2;
+            btnViewCatalog.Text = "Каталог оборудования";
+            btnViewCatalog.UseVisualStyleBackColor = false;
+            btnViewCatalog.Click += btnViewCatalog_Click;
+            // 
+            // labelRentalDescription
+            // 
+            labelRentalDescription.BackColor = Color.Transparent;
+            labelRentalDescription.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            labelRentalDescription.ForeColor = Color.FromArgb(64, 64, 64);
+            labelRentalDescription.Location = new Point(20, 48);
+            labelRentalDescription.Name = "labelRentalDescription";
+            labelRentalDescription.Size = new Size(710, 60);
+            labelRentalDescription.TabIndex = 1;
+            labelRentalDescription.Text = "Выберите оборудование в каталоге и оформите заказ в аренду. Доступны инструменты, техника и спецоборудование на любой срок.";
+            // 
+            // labelWelcomeRent
+            // 
+            labelWelcomeRent.AutoSize = true;
+            labelWelcomeRent.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            labelWelcomeRent.ForeColor = Color.SaddleBrown;
+            labelWelcomeRent.Location = new Point(20, 8);
+            labelWelcomeRent.Name = "labelWelcomeRent";
+            labelWelcomeRent.Size = new Size(357, 32);
+            labelWelcomeRent.TabIndex = 0;
+            labelWelcomeRent.Text = "Здравствуйте, пользователь!";
+            labelWelcomeRent.Click += labelWelcomeRent_Click;
+            // 
+            // panelGuestActions
+            // 
+            panelGuestActions.Controls.Add(label13);
+            panelGuestActions.Controls.Add(label9);
+            panelGuestActions.Controls.Add(label8);
+            panelGuestActions.Controls.Add(label7);
+            panelGuestActions.Controls.Add(label3);
+            panelGuestActions.Controls.Add(button1);
+            panelGuestActions.Dock = DockStyle.Fill;
+            panelGuestActions.Location = new Point(0, 0);
+            panelGuestActions.Name = "panelGuestActions";
+            panelGuestActions.Size = new Size(1025, 577);
+            panelGuestActions.TabIndex = 15;
             // 
             // label13
             // 
@@ -193,6 +334,7 @@
             // label9
             // 
             label9.AutoSize = true;
+            label9.BackColor = Color.Transparent;
             label9.Font = new Font("Segoe UI", 26.25F, FontStyle.Bold, GraphicsUnit.Point, 204);
             label9.ForeColor = Color.Black;
             label9.Location = new Point(370, 208);
@@ -205,7 +347,7 @@
             // label8
             // 
             label8.AutoSize = true;
-            label8.BackColor = Color.PeachPuff;
+            label8.BackColor = Color.Transparent;
             label8.Font = new Font("Segoe UI", 26.25F, FontStyle.Bold, GraphicsUnit.Point, 204);
             label8.ForeColor = Color.SaddleBrown;
             label8.Location = new Point(277, 161);
@@ -218,6 +360,7 @@
             // label7
             // 
             label7.AutoSize = true;
+            label7.BackColor = Color.Transparent;
             label7.Font = new Font("Segoe UI", 26.25F, FontStyle.Bold, GraphicsUnit.Point, 204);
             label7.ForeColor = Color.Black;
             label7.Location = new Point(395, 114);
@@ -230,6 +373,7 @@
             // label3
             // 
             label3.AutoSize = true;
+            label3.BackColor = Color.Transparent;
             label3.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 204);
             label3.ForeColor = Color.FromArgb(64, 64, 64);
             label3.Location = new Point(302, 264);
@@ -238,6 +382,30 @@
             label3.TabIndex = 11;
             label3.Text = "Регистрируйся сегодня - пользуйся \r\n оборудованием уже завтра";
             label3.TextAlign = ContentAlignment.BottomCenter;
+            // 
+            // pictureBox5
+            // 
+            pictureBox5.BackColor = Color.Transparent;
+            pictureBox5.Image = Properties.Resources.vecteezy_computer_icons_with_white_background_8958610_nobg;
+            pictureBox5.Location = new Point(0, 74);
+            pictureBox5.Name = "pictureBox5";
+            pictureBox5.Size = new Size(536, 397);
+            pictureBox5.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox5.TabIndex = 18;
+            pictureBox5.TabStop = false;
+            pictureBox5.Visible = false;
+            // 
+            // pictureBox6
+            // 
+            pictureBox6.BackColor = Color.Transparent;
+            pictureBox6.Image = Properties.Resources.vecteezy_computer_icons_with_white_background_8958610_nobg;
+            pictureBox6.Location = new Point(476, 71);
+            pictureBox6.Name = "pictureBox6";
+            pictureBox6.Size = new Size(549, 397);
+            pictureBox6.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox6.TabIndex = 19;
+            pictureBox6.TabStop = false;
+            pictureBox6.Visible = false;
             // 
             // panel3
             // 
@@ -339,7 +507,12 @@
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             panel2.ResumeLayout(false);
-            panel2.PerformLayout();
+            panelRentalActions.ResumeLayout(false);
+            panelRentalActions.PerformLayout();
+            panelGuestActions.ResumeLayout(false);
+            panelGuestActions.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
@@ -371,5 +544,16 @@
         private PictureBox pictureBox2;
         private PictureBox pictureBox1;
         private Label label13;
+        private Label labelUserLogin;
+        private Label labelUserRole;
+        private Panel panelGuestActions;
+        private Panel panelRentalActions;
+        private Label labelWelcomeRent;
+        private Label labelRentalDescription;
+        private Button btnViewCatalog;
+        private Button btnRentEquipment;
+        private Button btnManageEquipment;
+        private PictureBox pictureBox5;
+        private PictureBox pictureBox6;
     }
 }

@@ -115,6 +115,7 @@
             // pictureBox5
             // 
             pictureBox5.BackColor = Color.Transparent;
+            pictureBox5.Cursor = Cursors.Hand;
             pictureBox5.Image = Properties.Resources.refresh_875100;
             pictureBox5.Location = new Point(266, 192);
             pictureBox5.Name = "pictureBox5";
@@ -122,7 +123,6 @@
             pictureBox5.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox5.TabIndex = 11;
             pictureBox5.TabStop = false;
-            pictureBox5.Cursor = Cursors.Hand;
             pictureBox5.Click += pictureBox5_Click;
             // 
             // label3
@@ -208,9 +208,9 @@
             button1.Font = new Font("Calibri", 18F, FontStyle.Regular, GraphicsUnit.Point, 204);
             button1.ForeColor = Color.White;
             button1.ImageAlign = ContentAlignment.BottomCenter;
-            button1.Location = new Point(91, 317);
+            button1.Location = new Point(70, 326);
             button1.Name = "button1";
-            button1.Size = new Size(230, 44);
+            button1.Size = new Size(267, 44);
             button1.TabIndex = 4;
             button1.Text = "Войти";
             button1.UseVisualStyleBackColor = false;
