@@ -1,12 +1,12 @@
 graph TD
 
-    ROLES ||--o{ USERS : "assigns"
-    USERS ||--o{ LOGIN_ATTEMPTS : "makes"
-    USERS ||--o{ RENTAL_CONTRACTS : "processes"
-    USERS ||--o{ RENTAL_CONTRACTS : "rents"
-    EQUIPMENT ||--o{ RENTAL_CONTRACTS : "rented in"
-    RENTAL_CONTRACTS ||--o{ RETURNS : "has"
-    RENTAL_CONTRACTS ||--o{ PENALTIES : "has"
+    ROLES --> USERS : "assigns"
+    USERS --> LOGIN_ATTEMPTS : "makes"
+    USERS --> RENTAL_CONTRACTS : "processes"
+    USERS --> RENTAL_CONTRACTS : "rents"
+    EQUIPMENT --> RENTAL_CONTRACTS : "rented in"
+    RENTAL_CONTRACTS --> RETURNS : "has"
+    RENTAL_CONTRACTS --> PENALTIES : "has"
 
     ROLES {
         int id PK
