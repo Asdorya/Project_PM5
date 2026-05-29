@@ -19,6 +19,7 @@ namespace Equipment_rental
 
         private void label2_Click(object sender, EventArgs e)
         {
+            this.Hide();
             LoginForm loginForm = new LoginForm();
             loginForm.Show();
         }
@@ -26,6 +27,7 @@ namespace Equipment_rental
        
         private void button1_Click(object sender, EventArgs e)
         {
+            this.Hide();
             LoginForm loginForm = new LoginForm();
             loginForm.Show();
         }

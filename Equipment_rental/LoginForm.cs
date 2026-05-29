@@ -111,7 +111,9 @@ namespace Equipment_rental
 
         private void label2_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            this.Hide();
+            MainForm mainForm = new MainForm();
+            mainForm.Show();
         }
 
         private void label2_MouseEnter(object sender, EventArgs e)

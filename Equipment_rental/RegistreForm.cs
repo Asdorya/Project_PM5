@@ -123,7 +123,9 @@ namespace Equipment_rental
 
         private void CloseButton_Click_1(object sender, EventArgs e)
         {
-            Application.Exit();
+            this.Hide();
+            MainForm mainForm = new MainForm();
+            mainForm.Show();
         }
 
 
@@ -189,11 +191,23 @@ namespace Equipment_rental
                 MessageBox.Show("Введите пароль");
                 return;
             }
+            
             if (passField2.Text == "Подтвердите пароль")
             {
                 MessageBox.Show("Подтвердите пароль");
                 return;
             }
+            if (passField.Text.Length < 6)
+            {
+                MessageBox.Show("Пароль должен содержать минимум 6 символов");
+                return;
+            }
+            if (passField2.Text.Length < 6)
+            {
+                MessageBox.Show("Пароль должен содержать минимум 6 символов");
+                return;
+            }
+
 
             if (passField.Text != passField2.Text)
             { MessageBox.Show("Пароли не совпадают"); return; }
@@ -235,7 +249,7 @@ namespace Equipment_rental
 
             if (table.Rows.Count > 0)
             {
-                MessageBox.Show("Такой логин уже есть, введите другой логин");
+                MessageBox.Show("Этот логин уже занят, используйте другой логин");
                 return true;
             }
             else
