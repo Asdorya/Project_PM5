@@ -163,9 +163,21 @@ namespace Equipment_rental
             if (table.Rows.Count > 0
                 && PasswordHasher.VerifyPassword(passField.Text, table.Rows[0]["password"].ToString()!))
             {
+                DataRow userRow = table.Rows[0];
+                string roleValue = userRow.Table.Columns.Contains("role")
+                    ? userRow["role"]?.ToString()
+                    : UserRoleHelper.UserDbValue;
+
+                UserSession.SignIn(
+                    Convert.ToInt32(userRow["id"]),
+                    userRow["Name"].ToString() ?? "",
+                    loginField.Text,
+                    UserRoleHelper.FromDbValue(roleValue));
+
                 this.Hide();
-                MainForm mainForm = new MainForm();
-                mainForm.Show();
+                EquipmentForm equipmentForm = new EquipmentForm();
+                equipmentForm.FormClosed += (_, _) => Close();
+                equipmentForm.Show();
             }
             else
             {

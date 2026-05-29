@@ -214,10 +214,13 @@ namespace Equipment_rental
 
 
             DB db = new DB();
-            MySqlCommand command = new MySqlCommand("INSERT INTO `users` (`Name`, `login`, `password`) VALUES (@name, @login, @pass)", db.getConnection());
+            MySqlCommand command = new MySqlCommand(
+                "INSERT INTO `users` (`Name`, `login`, `password`, `role`) VALUES (@name, @login, @pass, @role)",
+                db.getConnection());
             command.Parameters.Add("@name", MySqlDbType.VarChar).Value = userNameField.Text;
             command.Parameters.Add("@login", MySqlDbType.VarChar).Value = loginField.Text;
             command.Parameters.Add("@pass", MySqlDbType.VarChar).Value = PasswordHasher.HashPassword(passField.Text);
+            command.Parameters.Add("@role", MySqlDbType.VarChar).Value = UserRoleHelper.UserDbValue;
 
             db.openConnection();
 

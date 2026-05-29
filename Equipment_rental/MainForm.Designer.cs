@@ -110,6 +110,7 @@
             label5.Size = new Size(127, 21);
             label5.TabIndex = 11;
             label5.Text = "Оборудование";
+            label5.Click += label5_Click;
             // 
             // label4
             // 
