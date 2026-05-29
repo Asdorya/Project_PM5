@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\TREIDCOMPUTERS\\source\\repos\\Equipment_rental\\Equipment_rental\\Equipment_rental.csproj",
+      "projectUniqueName": "C:\\Users\\TREIDCOMPUTERS\\Desktop\\Новая папка\\Project_PM5\\Equipment_rental\\Equipment_rental.csproj",
       "projectName": "Equipment_rental",
-      "projectPath": "C:\\Users\\TREIDCOMPUTERS\\source\\repos\\Equipment_rental\\Equipment_rental\\Equipment_rental.csproj",
+      "projectPath": "C:\\Users\\TREIDCOMPUTERS\\Desktop\\Новая папка\\Project_PM5\\Equipment_rental\\Equipment_rental.csproj",
       "packagesPath": "C:\\Users\\TREIDCOMPUTERS\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\TREIDCOMPUTERS\\source\\repos\\Equipment_rental\\Equipment_rental\\obj\\",
+      "outputPath": "C:\\Users\\TREIDCOMPUTERS\\Desktop\\Новая папка\\Project_PM5\\Equipment_rental\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

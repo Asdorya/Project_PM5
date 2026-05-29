@@ -123,16 +123,14 @@ namespace Equipment_rental
 
                 MySqlDataAdapter adapter = new MySqlDataAdapter();
 
-                MySqlCommand command = new MySqlCommand("SELECT * FROM `users` WHERE `login` = @uL AND `password` = @uP", db.getConnection());
+                MySqlCommand command = new MySqlCommand("SELECT * FROM `users` WHERE `login` = @uL", db.getConnection());
                 command.Parameters.Add("@uL", MySqlDbType.VarChar).Value = loginField.Text;
-                command.Parameters.Add("@uP", MySqlDbType.VarChar).Value = passField.Text;
 
                 adapter.SelectCommand = command;
                 adapter.Fill(table);
 
-
-
-                if (table.Rows.Count > 0)
+                if (table.Rows.Count > 0
+                    && PasswordHasher.VerifyPassword(passField.Text, table.Rows[0]["password"].ToString()!))
                 {
                     this.Hide();
                     MainForm mainForm = new MainForm();

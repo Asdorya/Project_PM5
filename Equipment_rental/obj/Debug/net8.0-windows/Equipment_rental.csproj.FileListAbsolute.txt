@@ -21,3 +21,27 @@ C:\Users\TREIDCOMPUTERS\source\repos\Equipment_rental\Equipment_rental\obj\Debug
 C:\Users\TREIDCOMPUTERS\source\repos\Equipment_rental\Equipment_rental\obj\Debug\net8.0-windows\Equipmen.1572D3CD.Up2Date
 C:\Users\TREIDCOMPUTERS\source\repos\Equipment_rental\Equipment_rental\obj\Debug\net8.0-windows\Equipment_rental.RegistreForm.resources
 C:\Users\TREIDCOMPUTERS\source\repos\Equipment_rental\Equipment_rental\obj\Debug\net8.0-windows\Equipment_rental.MainForm.resources
+C:\Users\TREIDCOMPUTERS\Desktop\Новая папка\Project_PM5\Equipment_rental\obj\Debug\net8.0-windows\Equipment_rental.csproj.AssemblyReference.cache
+C:\Users\TREIDCOMPUTERS\Desktop\Новая папка\Project_PM5\Equipment_rental\obj\Debug\net8.0-windows\Equipment_rental.LoginForm.resources
+C:\Users\TREIDCOMPUTERS\Desktop\Новая папка\Project_PM5\Equipment_rental\obj\Debug\net8.0-windows\Equipment_rental.MainForm.resources
+C:\Users\TREIDCOMPUTERS\Desktop\Новая папка\Project_PM5\Equipment_rental\obj\Debug\net8.0-windows\Equipment_rental.Properties.Resources.resources
+C:\Users\TREIDCOMPUTERS\Desktop\Новая папка\Project_PM5\Equipment_rental\obj\Debug\net8.0-windows\Equipment_rental.RegistreForm.resources
+C:\Users\TREIDCOMPUTERS\Desktop\Новая папка\Project_PM5\Equipment_rental\obj\Debug\net8.0-windows\Equipment_rental.csproj.GenerateResource.cache
+C:\Users\TREIDCOMPUTERS\Desktop\Новая папка\Project_PM5\Equipment_rental\obj\Debug\net8.0-windows\Equipment_rental.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\TREIDCOMPUTERS\Desktop\Новая папка\Project_PM5\Equipment_rental\obj\Debug\net8.0-windows\Equipment_rental.AssemblyInfoInputs.cache
+C:\Users\TREIDCOMPUTERS\Desktop\Новая папка\Project_PM5\Equipment_rental\obj\Debug\net8.0-windows\Equipment_rental.AssemblyInfo.cs
+C:\Users\TREIDCOMPUTERS\Desktop\Новая папка\Project_PM5\Equipment_rental\obj\Debug\net8.0-windows\Equipment_rental.csproj.CoreCompileInputs.cache
+C:\Users\TREIDCOMPUTERS\Desktop\Новая папка\Project_PM5\Equipment_rental\obj\Debug\net8.0-windows\Equipment_rental.sourcelink.json
+C:\Users\TREIDCOMPUTERS\Desktop\Новая папка\Project_PM5\Equipment_rental\obj\Debug\net8.0-windows\Equipment_rental.dll
+C:\Users\TREIDCOMPUTERS\Desktop\Новая папка\Project_PM5\Equipment_rental\obj\Debug\net8.0-windows\refint\Equipment_rental.dll
+C:\Users\TREIDCOMPUTERS\Desktop\Новая папка\Project_PM5\Equipment_rental\obj\Debug\net8.0-windows\Equipment_rental.pdb
+C:\Users\TREIDCOMPUTERS\Desktop\Новая папка\Project_PM5\Equipment_rental\bin\Debug\net8.0-windows\Equipment_rental.exe
+C:\Users\TREIDCOMPUTERS\Desktop\Новая папка\Project_PM5\Equipment_rental\bin\Debug\net8.0-windows\Equipment_rental.deps.json
+C:\Users\TREIDCOMPUTERS\Desktop\Новая папка\Project_PM5\Equipment_rental\bin\Debug\net8.0-windows\Equipment_rental.runtimeconfig.json
+C:\Users\TREIDCOMPUTERS\Desktop\Новая папка\Project_PM5\Equipment_rental\bin\Debug\net8.0-windows\Equipment_rental.dll
+C:\Users\TREIDCOMPUTERS\Desktop\Новая папка\Project_PM5\Equipment_rental\bin\Debug\net8.0-windows\Equipment_rental.pdb
+C:\Users\TREIDCOMPUTERS\Desktop\Новая папка\Project_PM5\Equipment_rental\bin\Debug\net8.0-windows\MySql.Data.dll
+C:\Users\TREIDCOMPUTERS\Desktop\Новая папка\Project_PM5\Equipment_rental\bin\Debug\net8.0-windows\MySql.Data.xml
+C:\Users\TREIDCOMPUTERS\Desktop\Новая папка\Project_PM5\Equipment_rental\obj\Debug\net8.0-windows\Equipmen.1572D3CD.Up2Date
+C:\Users\TREIDCOMPUTERS\Desktop\Новая папка\Project_PM5\Equipment_rental\obj\Debug\net8.0-windows\Equipment_rental.genruntimeconfig.cache
+C:\Users\TREIDCOMPUTERS\Desktop\Новая папка\Project_PM5\Equipment_rental\obj\Debug\net8.0-windows\ref\Equipment_rental.dll

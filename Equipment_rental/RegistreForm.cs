@@ -203,14 +203,12 @@ namespace Equipment_rental
             MySqlCommand command = new MySqlCommand("INSERT INTO `users` (`Name`, `login`, `password`) VALUES (@name, @login, @pass)", db.getConnection());
             command.Parameters.Add("@name", MySqlDbType.VarChar).Value = userNameField.Text;
             command.Parameters.Add("@login", MySqlDbType.VarChar).Value = loginField.Text;
-            command.Parameters.Add("@pass", MySqlDbType.VarChar).Value = passField.Text;
+            command.Parameters.Add("@pass", MySqlDbType.VarChar).Value = PasswordHasher.HashPassword(passField.Text);
 
             db.openConnection();
 
             if (command.ExecuteNonQuery() == 1)
             {
-                // хеширование пароля
-                string passwordToSave = PasswordHasher.HashPassword(passField.Text);
                 MessageBox.Show("Аккаунт успешно создан"); }
 
             else { MessageBox.Show("Ошибка при создании аккаунта, повторите попытку"); }
