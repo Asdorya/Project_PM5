@@ -1,22 +1,27 @@
 ﻿using MySql.Data.MySqlClient;
-using MySqlX.XDevAPI.Relational;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Equipment_rental
 {
     public partial class LoginForm : Form
     {
+        private const int MaxCaptchaAttempts = 3;
+        private const int LockoutSeconds = 30;
+
+        private string _captchaCode = "";
+        private int _failedCaptchaAttempts;
+        private DateTime _lockoutUntil = DateTime.MinValue;
+        private readonly System.Windows.Forms.Timer _lockoutTimer;
+
         public LoginForm()
         {
             InitializeComponent();
+
+            _lockoutTimer = new System.Windows.Forms.Timer { Interval = 1000 };
+            _lockoutTimer.Tick += LockoutTimer_Tick;
 
             loginField.Text = "Введите логин";
             loginField.ForeColor = Color.Gray;
@@ -30,6 +35,7 @@ namespace Equipment_rental
             capcha.Text = "Введите капчу";
             capcha.ForeColor = Color.Gray;
 
+            RefreshCaptcha();
         }
 
         Point LastPoint;
@@ -115,38 +121,57 @@ namespace Equipment_rental
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (capcha.Text == "V4XBG")
+            if (IsLockedOut())
             {
-                DB db = new DB();
-
-                DataTable table = new DataTable();
-
-                MySqlDataAdapter adapter = new MySqlDataAdapter();
-
-                MySqlCommand command = new MySqlCommand("SELECT * FROM `users` WHERE `login` = @uL", db.getConnection());
-                command.Parameters.Add("@uL", MySqlDbType.VarChar).Value = loginField.Text;
-
-                adapter.SelectCommand = command;
-                adapter.Fill(table);
-
-                if (table.Rows.Count > 0
-                    && PasswordHasher.VerifyPassword(passField.Text, table.Rows[0]["password"].ToString()!))
-                {
-                    this.Hide();
-                    MainForm mainForm = new MainForm();
-                    mainForm.Show();
-                }
-                else
-                    MessageBox.Show("Произошла ошибка");
+                MessageBox.Show($"Вход заблокирован. Повторите через {GetLockoutRemainingSeconds()} сек.");
+                return;
             }
 
+            if (capcha.Text == "Введите капчу" || string.IsNullOrWhiteSpace(capcha.Text))
+            {
+                MessageBox.Show("Введите текст с картинки");
+                return;
+            }
+
+            if (!string.Equals(capcha.Text.Trim(), _captchaCode, StringComparison.OrdinalIgnoreCase))
+            {
+                _failedCaptchaAttempts++;
+                MessageBox.Show("Неверная капча, повторите попытку");
+                RefreshCaptcha();
+
+                if (_failedCaptchaAttempts >= MaxCaptchaAttempts)
+                    StartLockout();
+                return;
+            }
+
+            _failedCaptchaAttempts = 0;
+
+            DB db = new DB();
+
+            DataTable table = new DataTable();
+
+            MySqlDataAdapter adapter = new MySqlDataAdapter();
+
+            MySqlCommand command = new MySqlCommand("SELECT * FROM `users` WHERE `login` = @uL", db.getConnection());
+            command.Parameters.Add("@uL", MySqlDbType.VarChar).Value = loginField.Text;
+
+            adapter.SelectCommand = command;
+            adapter.Fill(table);
+
+            if (table.Rows.Count > 0
+                && PasswordHasher.VerifyPassword(passField.Text, table.Rows[0]["password"].ToString()!))
+            {
+                this.Hide();
+                MainForm mainForm = new MainForm();
+                mainForm.Show();
+            }
             else
             {
-                MessageBox.Show("Неверная капча, повторите попытку");
-                capcha.Text = "";
+                MessageBox.Show("Произошла ошибка");
+                RefreshCaptcha();
             }
         }
-            
+
 
         private void label2_MouseLeave(object sender, EventArgs e)
         {
@@ -195,6 +220,84 @@ namespace Equipment_rental
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+            if (IsLockedOut())
+            {
+                MessageBox.Show($"Вход заблокирован. Повторите через {GetLockoutRemainingSeconds()} сек.");
+                return;
+            }
+
+            RefreshCaptcha();
+        }
+
+        private void RefreshCaptcha()
+        {
+            _captchaCode = CaptchaGenerator.GenerateCode();
+            var oldImage = pictureCapcha.Image;
+            pictureCapcha.Image = CaptchaGenerator.CreateImage(
+                _captchaCode,
+                pictureCapcha.Width,
+                pictureCapcha.Height);
+            oldImage?.Dispose();
+
+            capcha.Text = "";
+            capcha.ForeColor = Color.Black;
+        }
+
+        private void StartLockout()
+        {
+            _lockoutUntil = DateTime.Now.AddSeconds(LockoutSeconds);
+            _failedCaptchaAttempts = 0;
+            SetLoginControlsEnabled(false);
+            button1.Text = $"Заблокировано ({LockoutSeconds} с)";
+            _lockoutTimer.Start();
+            MessageBox.Show($"Слишком много неверных попыток. Вход заблокирован на {LockoutSeconds} секунд.");
+        }
+
+        private void LockoutTimer_Tick(object? sender, EventArgs e)
+        {
+            int remaining = GetLockoutRemainingSeconds();
+            if (remaining <= 0)
+            {
+                EndLockout();
+                return;
+            }
+
+            button1.Text = $"Заблокировано ({remaining} с)";
+        }
+
+        private void EndLockout()
+        {
+            _lockoutTimer.Stop();
+            _lockoutUntil = DateTime.MinValue;
+            SetLoginControlsEnabled(true);
+            button1.Text = "Войти";
+            RefreshCaptcha();
+        }
+
+        private bool IsLockedOut() => DateTime.Now < _lockoutUntil;
+
+        private int GetLockoutRemainingSeconds() =>
+            Math.Max(0, (int)Math.Ceiling((_lockoutUntil - DateTime.Now).TotalSeconds));
+
+        private void SetLoginControlsEnabled(bool enabled)
+        {
+            button1.Enabled = enabled;
+            loginField.Enabled = enabled;
+            passField.Enabled = enabled;
+            capcha.Enabled = enabled;
+            pictureBox5.Enabled = enabled;
+        }
+
+        protected override void OnFormClosed(FormClosedEventArgs e)
+        {
+            _lockoutTimer.Stop();
+            _lockoutTimer.Dispose();
+            pictureCapcha.Image?.Dispose();
+            base.OnFormClosed(e);
         }
     }
 }

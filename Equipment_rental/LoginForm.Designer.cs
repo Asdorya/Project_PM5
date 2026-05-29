@@ -35,7 +35,7 @@
             pictureBox5 = new PictureBox();
             label3 = new Label();
             capcha = new TextBox();
-            pictureBox4 = new PictureBox();
+            pictureCapcha = new PictureBox();
             RegistrLabel = new Label();
             passField = new TextBox();
             pictureBox3 = new PictureBox();
@@ -46,7 +46,7 @@
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureCapcha).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -98,7 +98,7 @@
             panel2.Controls.Add(pictureBox5);
             panel2.Controls.Add(label3);
             panel2.Controls.Add(capcha);
-            panel2.Controls.Add(pictureBox4);
+            panel2.Controls.Add(pictureCapcha);
             panel2.Controls.Add(RegistrLabel);
             panel2.Controls.Add(passField);
             panel2.Controls.Add(pictureBox3);
@@ -122,6 +122,8 @@
             pictureBox5.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox5.TabIndex = 11;
             pictureBox5.TabStop = false;
+            pictureBox5.Cursor = Cursors.Hand;
+            pictureBox5.Click += pictureBox5_Click;
             // 
             // label3
             // 
@@ -145,17 +147,19 @@
             capcha.Size = new Size(208, 38);
             capcha.TabIndex = 9;
             capcha.TextChanged += textBox1_TextChanged;
+            capcha.Enter += capcha_Enter;
+            capcha.Leave += capcha_Leave;
             // 
-            // pictureBox4
+            // pictureCapcha
             // 
-            pictureBox4.BackColor = Color.Transparent;
-            pictureBox4.Image = Properties.Resources.capche;
-            pictureBox4.Location = new Point(106, 192);
-            pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(143, 47);
-            pictureBox4.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox4.TabIndex = 8;
-            pictureBox4.TabStop = false;
+            pictureCapcha.BackColor = Color.White;
+            pictureCapcha.BorderStyle = BorderStyle.FixedSingle;
+            pictureCapcha.Location = new Point(106, 192);
+            pictureCapcha.Name = "pictureCapcha";
+            pictureCapcha.Size = new Size(143, 47);
+            pictureCapcha.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureCapcha.TabIndex = 8;
+            pictureCapcha.TabStop = false;
             // 
             // RegistrLabel
             // 
@@ -259,7 +263,7 @@
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureCapcha).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
@@ -281,7 +285,7 @@
         private Label RegistrLabel;
         private Label label3;
         private TextBox capcha;
-        private PictureBox pictureBox4;
+        private PictureBox pictureCapcha;
         private PictureBox pictureBox5;
         private Label label4;
     }
